@@ -1,5 +1,7 @@
 package pages;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 import mobileWrapper.AppSpecificMethods;
 
 public class LoginPage extends AppSpecificMethods{
@@ -21,6 +23,7 @@ public class LoginPage extends AppSpecificMethods{
 		return this;
 	}
 	
+	@When("the user clicked login which is designed under the password test field")
 	public HomePage clickLogin() {
 		if(click("xpath", "//span[text()='Login']"))
 			reportStep("Login button clicked Successfully", "PASS");
@@ -28,6 +31,13 @@ public class LoginPage extends AppSpecificMethods{
 			reportStep("Login button click failed", "FAIL");
 		return new HomePage();
 	}
+	
+	@Given("the user enter valied credential username as (.*) and password as (.*)")
+	public void enterValidCredential(String email, String pwd) {
+		enterEmailAddress(email);
+		enterPassword(pwd);
+	}
+	
 	
 
 }
