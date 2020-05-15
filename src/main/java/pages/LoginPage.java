@@ -25,14 +25,22 @@ public class LoginPage extends AppSpecificMethods{
 	
 	@When("the user clicked login which is designed under the password test field")
 	public HomePage clickLogin() {
-		if(click("xpath", "//span[text()='Login']"))
+		if(click("xpath", "//span[text()='Login']")) {
+			try {
+				Thread.sleep(15000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("done");
 			reportStep("Login button clicked Successfully", "PASS");
+		}
 		else
 			reportStep("Login button click failed", "FAIL");
 		return new HomePage();
 	}
 	
-	@Given("the user enter valied credential username as (.*) and password as (.*)")
+	@Given("the user enter valied credential username as {} and password as {}")
 	public void enterValidCredential(String email, String pwd) {
 		enterEmailAddress(email);
 		enterPassword(pwd);
