@@ -3,7 +3,7 @@ node{
         git 'https://github.com/TestLeafPages/LeafOrg_Appium_Framework/'
     }
     stage('Compile-Package'){
-        def mvnHome = tool name: 'maven-3', type: 'maven'
+        def mvnHome = tool name: 'Default', type: 'maven'
         sh "${mvnHome}/bin/mvn package"
     }
 }
