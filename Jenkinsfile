@@ -10,7 +10,7 @@ node{
     }
     stage('Upload') {
 
-        dir('C:\Users\dell\.jenkins\workspace\Appium_Pipeline_Project'){
+        dir('C:/Users/dell/.jenkins/workspace/Appium_Pipeline_Project'){
 
             pwd(); //Log current directory
 
