@@ -5,7 +5,7 @@ node{
     stage('Compile-Package'){
         def mvnHome = tool name: 'Default', type: 'maven'
         //sh "${mvnHome}/bin/mvn package"
-        env.JAVA_HOME = tool 'JDK-1.8'
+        env.JAVA_HOME = tool name: 'JAVA_HOME', type: 'jdk'
         bat "\"${mvnHome}\"\\bin\\mvn -B verify"
     }
 }
