@@ -7,6 +7,5 @@ node{
         //sh "${mvnHome}/bin/mvn package"
         env.JAVA_HOME = tool name: 'JAVA_HOME', type: 'jdk'
         bat "\"${mvnHome}\"\\bin\\mvn -B install"
-    }
-    
+    }   
 }
